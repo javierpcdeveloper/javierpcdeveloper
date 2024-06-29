@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* General Styles */
+        :root {
+            --color_cabecera: #cc6699;
+            --color_menu: #5c6699;
+            --color_main: #cc9619;
+            --color_pie: #cc6699;
+            --color_seccion: #aa80ff;
+            --color_seccion_cabecera: #66cc99;
+            --color_seccion_cuerpo: #fcf699;
+            --color_boton: #99f9fc;
+            --color_etiquetas: #816e6b;
+        }
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            background: linear-gradient(red, red 90%,var(--color_pie));
+        }
+       body > header {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height:80px;
+            text-align: center;
+            background-color: var(--color_cabecera);
+            z-index: 1;
+        }
+    
+        /* Navigation Styles */
+        body > nav {
+          position: sticky;
+          top: 80px;
+          z-index: 1;
+          min-height: 30px;
+          left: 0;
+          width: 100%;
+          align-items: center;
+          background-color: var(--color_menu);
+          display:flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content:space-around;
+        }
+        /* Main Styles */
+        section{
+            
+            border: 1px solid black;
+            display:flex;
+            align-items: center;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content:center;
+        }
+        section > header{
+            background-color: var(--color_seccion_cabecera);
+            border: 1px solid red;
+            width: 90%;
+        }
+        section > main{
+            text-align: left;
+            width: 80%;
+        }
+        #proyectos > main {
+            max-width: 850px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content:center;
+            margin: 2px;
+            flex-direction: row;
+        }
+        article {
+            background-color: rgba(0, 0, 255, 0);
+            margin: 8px;
+            text-align: center;
+            border: 1px solid black;
+        }
+        article > main{
+            position: relative;
+            z-index: 0;
+        }
+        article > main > header{
+            background-color: rgba(41, 41, 41, 0.8);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            padding: 5px;
+            color:white;
+        }
+        article > main > img{
+            max-width: 390px;
+            max-height: 280px;
+        }
+        article > footer{
+            text-align: left;
+            width: 390px;
+        }
+        article > footer > nav > a{
+            z-index: 0;
+            background-color: var(--color_boton);
+            text-decoration: none;
+            border-radius: 3px;
+            margin: 2px;
+            padding: 1px;
+        }
+        .etiquetas{
+            margin: 5px 1px;
+        }
+        article > footer > div > span{
+            background-color: var(--color_etiquetas);
+            color: blue;
+            margin: 3px;
+            padding: 2px;
+            border-radius: 5px;
+        }
+        article > main > img{
+            width: 100%;
+            height: 100%;
+        }
+        body > footer {
+            position: sticky;
+          bottom: 0;
+          left: 0;
+          height: 50px;
+          width: 100%;
+          background-color: var(--color_pie);
+          color: #fff;
+          text-align: center;
+        }
+        @media (max-width: 1000px) {
+            body > nav {
+                flex-direction: column;
+            }
+            body > footer{
+
+            }
+            article{
+                width: 90%;
+                background-color: yellow;
+            }
+        }
+      </style>
+</head>
+<body>
+    <header>
+      <h1>Website Title</h1>
+    </header>
+    <nav>
+      <div><a href="#acercademi">Acerca de mí</a></div>
+      <div><a href="#formacion">Formación</a></div>
+      <div><a href="#proyectos">Proyectos</a></div>
+      <div><a href="#contactar">Contactar</a></div>
+    </nav>
+    <main>
+      <section id="acercademi">
+        <header>Acerca de mi</header>
+        <main>
+            <p>Content for Section 1</p>
+            <p>Content for Section 1</p>
+        </main>
+      </section>
+      <section id="formacion">
+        <header>Formacion</header>
+        <main>
+            <ul>Oficial
+                <li>FP1</li>
+                <li>FP2</li>
+            </ul>
+            <ul>No oficial
+                <li>390x280</li>
+                <li>400x300</li>
+            </ul>
+        </main>
+      </section>
+      <section id="proyectos">
+        <header>Proyectos</header>
+        <main>
+            <article>
+                <main>
+                    <header>SADAMUR</header>
+                    <img src="https://www.shutterstock.com/image-photo/closeup-python-code-on-computer-260nw-2458354907.jpg">
+                </main>
+                <footer>
+                    <div>Aplicación web para gestión de parking de aviación ejecutiva.</div>
+                    <div class="etiquetas"><span>PHP</span><span>SPA</span><span>Postgre</span></div>
+                    <nav><a href="">Ver código</a></nav>
+                </footer>
+            </article>
+            <article>
+                <main>
+                    <header>Directorio de empresas</header>
+                    <img src="https://5.imimg.com/data5/YO/NA/GLADMIN-23878462/web-development-services-500x500.jpg">
+                </main>
+                <footer>
+                    <div>Aplicación móvil para almacenamiento y consulta de empresas.</div>
+                    <div class="etiquetas"><span>Kotlin</span><span>Android</span><span>Firebase</span><span>Móviles</span></div>
+                    <nav><a href="">Ver código</a></nav>
+                </footer>
+            </article>
+            <article>
+                <main>
+                    <header>Gestor de tareas</header>
+                    <img src="https://5.imimg.com/data5/YO/NA/GLADMIN-23878462/web-development-services-500x500.jpg">
+                </main>
+                <footer>
+                    <div>Aplicación web desarrollada en J2EE con ORM utilizando el patrón MVC para gestión de tareas.</div>
+                    <div class="etiquetas"><span>Java</span><span>J2ee</span><span>Postgre</span><span>MVC</span><span>Hibernate</span></div>
+                    <nav><a href="">Ver código</a></nav>
+                </footer>
+            </article>
+            <article>
+                <main>
+                    <header>3 en raya (texto)</header>
+                    <img src="https://www.shutterstock.com/image-photo/closeup-python-code-on-computer-260nw-2458354907.jpg">
+                </main>
+                <footer>
+                    <div>Aplicación Java de línea de comandos con arquitectura cliente-servidor.</div>
+                    <div class="etiquetas"><span>Java</span><span>Hilos</span><span>Sockets</span><span>Concurrencia</span></div>
+                    <nav><a href="">Ver código cliente</a><a href="">Ver código servidor</a></nav>
+                </footer>
+            </article>
+            <article>
+                <main>
+                    <header>3 en raya (gráfico)</header>
+                    <img src="https://www.shutterstock.com/image-photo/closeup-python-code-on-computer-260nw-2458354907.jpg">
+                </main>
+                <footer>
+                    <div>Aplicación gráfica de escritorio en Java con arquitectura cliente-servidor.</div>
+                    <div class="etiquetas"><span>JavaFX</span><span>Hilos</span><span>Sockets</span><span>Concurrencia</span></div>
+                    <nav><a href="">Ver código cliente</a><a href="">Descargar</a></nav>
+                </footer>
+            </article>
+            <article>
+                <main>
+                    <header>Serie Affinity</header>
+                    <img src="https://5.imimg.com/data5/YO/NA/GLADMIN-23878462/web-development-services-500x500.jpg">
+                </main>
+                <footer>
+                    <div>API pública para operaciones CRUD sobre base de datos noSQL.</div>
+                    <div class="etiquetas"><span>Java</span><span>API</span><span>MongoDB</span><span>RESTful</span></div>
+                    <nav><a href="">Ver código</a></nav>
+                </footer>
+            </article>
+            <article>
+                <main>
+                    <header>Donde ver tu serie</header>
+                    <img src="https://5.imimg.com/data5/YO/NA/GLADMIN-23878462/web-development-services-500x500.jpg">
+                </main>
+                <footer>
+                    <div>Aplicción web en PHP de ejemplo para realizar consultas a la API Serie Affinity.</div>
+                    <div class="etiquetas"><span>PHP</span><span>API</span><span>Frontend</span><span>RESTful</span></div>
+                    <nav><a href="">Ver código</a><a href="">Probar</a></nav>
+                </footer>
+            </article>
+            <article>
+                <main>
+                    <header>Rotten Pimientos</header>
+                    <img src="https://www.shutterstock.com/image-photo/closeup-python-code-on-computer-260nw-2458354907.jpg">
+                </main>
+                <footer>
+                    <div>Aplicción web en Javascript de ejemplo para realizar consultas a la API Serie Affinity.</div>
+                    <div class="etiquetas"><span>PHP</span><span>API</span><span>Frontend</span><span>RESTful</span></div>
+                    <nav><a href="">Ver código</a><a href="">Probar</a></nav>
+                </footer>
+            </article>
+        </main>
+      </section>
+      <section id="contactar">
+        <header>Contactar</header>
+        <main>Content for Section 3</main>
+      </section>
+    </main>
+  
+    <footer>
+      <p>&copy; 2023 Website Name. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
